@@ -3,7 +3,7 @@ const { exec } = require("child_process");
 const espeak = {
   say: (text, opts=[]) => 
     new Promise((resolve, reject) => {
-      opts.unshift(`${text}`);
+      opts.unshift(`"${text}"`);
 
       const args = opts.reduce((p, c) => `${p} ${c}`, "");
 
